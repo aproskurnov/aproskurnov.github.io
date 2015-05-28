@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
 	<meta charset="UTF-8">
 	<title>Aleksey Proskurnov personal blog</title>
@@ -67,7 +67,11 @@ ga('send', 'pageview');
 	<div class="posts">
 		<script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js?lang=css&skin=desert"></script>
 <h1>Homestead обновление до версии 2.0.8</h1>
-<div class="post-content"><p>После обновления до последней версии homestead неожиданно перестали работать команды в консоли. При запуске какой-нибудь <pre class='prettyprint'>homestead up</pre> выводится ошибка <pre class='prettyprint'>couldn't find HOME environment -- expanding `~' (ArgumentError)</pre> Это происходит из-за того, что по умолчанию php настроенно таким образом что не заполняет массив $_ENV переменными окружения. Открываем файл php.ini, находим строчку <pre class='prettyprint'>variables_order = "GPCS"</pre> и правим ее на следующее:<pre class='prettyprint'>variables_order = "EGPCS"</pre> Все, теперь осталось перезапустить php, набрать в консоли <pre class='prettyprint'>homestead up</pre> и продолжить наслаждаться разработкой.</p></div>
+<div class="post-content"><p>После обновления до последней версии homestead неожиданно перестали работать команды в консоли. При запуске какой-нибудь &lt;pre class="prettyprint"&gt;homestead up&lt;/pre&gt; выводится ошибка &lt;pre class="prettyprint"&gt;couldn’t find HOME environment – expanding `~’ (ArgumentError)&lt;/pre&gt;
+Это происходит из-за того, что по умолчанию php настроенно таким образом что не заполняет массив $_ENV переменными окружения. 
+Открываем файл php.ini, находим строчку &lt;pre class="prettyprint"&gt;variables_order = “GPCS”&lt;/pre&gt; и правим ее на следующее:&lt;pre class="prettyprint"&gt;variables_order = “EGPCS”&lt;/pre&gt;
+Все, теперь осталось перезапустить php, набрать в консоли &lt;pre class="prettyprint"&gt;homestead up&lt;/pre&gt; и продолжить наслаждаться разработкой.</p>
+</div>
 <div id="disqus_thread"></div>
     <script type="text/javascript">
     /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
