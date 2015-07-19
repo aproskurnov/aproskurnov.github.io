@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
 	<meta charset="UTF-8">
 	<title>Aleksey Proskurnov personal blog</title>
@@ -66,8 +66,25 @@ ga('send', 'pageview');
 	</div>
 	<div class="posts">
 		<script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js?lang=css&skin=desert"></script>
-<h1>Demo Page</h1>
-<div class="post-content"><p>Hello, friend! This is demo page, and get started&#8230;</p></div>
+<h1>Лечим хоткеи в phpstorm при русской раскладке ubuntu 13.10(14.04, 14.10, 15.04)</h1>
+<div class="post-content"><p>Недавно вышел phpstorm 9 с чем всех и поздравляю. Пока тестил новый инструмент, нашел способ вылечить проблему которая существует уже как минимум 2 года и описанная <a href="https://bugs.launchpad.net/unity/+bug/1226962">здесь</a> Если вкратце, то все хоткеи(включая Ctrl+V и Ctrl+C) в phpstorm’е работают только на латинской раскладке, соответственно приходится постоянно переключаться, что неимоверно бесит и вызывает желание сменить IDE/рабочую систему/профессию.
+Благодаря товарищу <a href="https://github.com/zheludkovm">zheldukovm</a> можно на время забыть об этой проблеме. Его <a href="https://github.com/zheludkovm/LinuxJavaFixes">LinuxJavaFixes</a> и есть та самая волшебная пилюлька.
+Скачиваем два файла:</p>
+
+<pre class="prettyprint">LinuxJavaFixes-1.0.0-SNAPSHOT.jar</pre>
+<p>и</p>
+<pre class="prettyprint">javassist-3.12.1.GA.jar</pre>
+
+<p>Кладем их куда-нибудь, например</p>
+
+<pre class="prettyprint">/[путь_к_phpstorm]/fix/</pre>
+
+<p>и прописываем в файлах phpstorm64.vmoptions для 64-битных или phpstorm.vmoptions для 32-битных систем следующую строчку:</p>
+
+<pre class="prettyprint">-javaagent:/&lt;путь_к_файлам_фикса/LinuxJavaFixes-1.0.0-SNAPSHOT.jar</pre>
+<p>Запускаем phpstorm,<br />
+вуаля, все работает, наслаждаемся</p>
+</div>
 <div id="disqus_thread"></div>
     <script type="text/javascript">
     /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
