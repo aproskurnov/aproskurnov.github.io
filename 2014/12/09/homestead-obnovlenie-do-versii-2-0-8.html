@@ -2,7 +2,7 @@
 <html lang="ru">
 <head>
 	<meta charset="UTF-8">
-	<title>Aleksei Proskurnov personal blog | Homestead обновление до версии 2.0.8</title>
+	<title>Aleksei Proskurnov personal blog | Homestead обновление до версии 2.0.8 </title>
 	<meta name="description" content="Решаем ошибку "couldn't find HOME environment" при запуске команд homestead 2.0.8 в ubunt'e">
 	<meta name="keywords" content="ubuntu, homestead, laravel, не запускается, environment, proskurnov, aproskurnov" />
 	<meta name="author" content="Aleksei Proskurnov">
@@ -49,6 +49,8 @@ pre{
 	padding: 10px;
 }
 </style>
+
+	<link href="http://aproskurnov.github.io/2014/12/09/homestead-obnovlenie-do-versii-2-0-8.html" rel="canonical">
     <script>
 (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 ga('create', 'UA-57255553-1', 'auto');
@@ -70,10 +72,27 @@ ga('send', 'pageview');
 	<div class="posts">
 		<script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js?lang=css&skin=desert"></script>
 <h1>Homestead обновление до версии 2.0.8</h1>
-<div class="post-content"><p>После обновления до последней версии homestead неожиданно перестали работать команды в консоли. При запуске какой-нибудь &lt;pre class="prettyprint"&gt;homestead up&lt;/pre&gt; выводится ошибка &lt;pre class="prettyprint"&gt;couldn’t find HOME environment – expanding `~’ (ArgumentError)&lt;/pre&gt;
-Это происходит из-за того, что по умолчанию php настроенно таким образом что не заполняет массив $_ENV переменными окружения. 
-Открываем файл php.ini, находим строчку &lt;pre class="prettyprint"&gt;variables_order = “GPCS”&lt;/pre&gt; и правим ее на следующее:&lt;pre class="prettyprint"&gt;variables_order = “EGPCS”&lt;/pre&gt;
-Все, теперь осталось перезапустить php, набрать в консоли &lt;pre class="prettyprint"&gt;homestead up&lt;/pre&gt; и продолжить наслаждаться разработкой.</p>
+<div class="post-content"><p>После обновления до последней версии homestead неожиданно перестали работать команды в консоли. При запуске какой-нибудь</p>
+
+<pre class="prettyprint">homestead up</pre>
+
+<p>выводится ошибка</p>
+
+<pre class="prettyprint">"couldn't find HOME environment -- expanding `~' (ArgumentError)"</pre>
+
+<p>Это происходит из-за того, что по умолчанию php настроенно таким образом что не заполняет массив $_ENV переменными окружения. 
+Открываем файл php.ini, находим строчку</p>
+<pre class="prettyprint">variables_order = "GPCS"</pre>
+
+<p>и правим ее на следующее:</p>
+
+<pre class="prettyprint">variables_order = "EGPCS"</pre>
+
+<p>Все, теперь осталось перезапустить php, набрать в консоли</p>
+
+<pre class="prettyprint">homestead up</pre>
+
+<p>и продолжить наслаждаться разработкой.</p>
 </div>
 <div id="disqus_thread"></div>
     <script type="text/javascript">
